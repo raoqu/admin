@@ -10,43 +10,29 @@ const menuList = [
     roles:["admin","editor","guest"]
   },
   {
-    title: "作者博客",
-    path: "/doc",
+    title: "文件",
+    path: "/file",
     icon: "file",
-    roles:["admin","editor","guest"]
+    roles: ["admin"],
+    children: [
+      {
+        title: "文件上传",
+        path: "/file/upload",
+        roles: ["admin"]
+      },
+      {
+        title: "文件下载",
+        path: "/file/download",
+        roles: ["admin"]
+      }
+    ]
   },
+  /*
   {
     title: "引导页",
     path: "/guide",
     icon: "key",
     roles:["admin","editor"]
-  },
-  {
-    title: "权限测试",
-    path: "/permission",
-    icon: "lock",
-    children: [
-      {
-        title: "权限说明",
-        path: "/permission/explanation",
-        roles:["admin"]
-      },
-      {
-        title: "admin页面",
-        path: "/permission/adminPage",
-        roles:["admin"]
-      },
-      {
-        title: "guest页面",
-        path: "/permission/guestPage",
-        roles:["guest"]
-      },
-      {
-        title: "editor页面",
-        path: "/permission/editorPage",
-        roles:["editor"]
-      },
-    ],
   },
   {
     title: "组件",
@@ -125,6 +111,39 @@ const menuList = [
     ],
   },
   {
+    title: "作者博客",
+    path: "/doc",
+    icon: "file",
+    roles:["admin","editor","guest"]
+  },
+  {
+    title: "权限测试",
+    path: "/permission",
+    icon: "lock",
+    children: [
+      {
+        title: "权限说明",
+        path: "/permission/explanation",
+        roles:["admin"]
+      },
+      {
+        title: "admin页面",
+        path: "/permission/adminPage",
+        roles:["admin"]
+      },
+      {
+        title: "guest页面",
+        path: "/permission/guestPage",
+        roles:["guest"]
+      },
+      {
+        title: "editor页面",
+        path: "/permission/editorPage",
+        roles:["editor"]
+      },
+    ],
+  },
+  {
     title: "表格",
     path: "/table",
     icon: "table",
@@ -165,7 +184,7 @@ const menuList = [
     path: "/user",
     icon: "usergroup-add",
     roles:["admin"]
-  },
+  }
   {
     title: "关于作者",
     path: "/about",
@@ -177,6 +196,6 @@ const menuList = [
     path: "/bug",
     icon: "bug",
     roles:["admin"]
-  },
+  },*/
 ];
 export default menuList;

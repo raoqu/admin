@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import { Upload, Icon, message } from "antd";
-import XLSX from "xlsx";
 const { Dragger } = Upload;
 
-const isExcel = (file) => {
-  return /\.(xlsx|xls|csv)$/.test(file.name);
-};
+
 class UploadExcel extends Component {
   static propTypes = {
     uploadSuccess: PropTypes.func.isRequired,

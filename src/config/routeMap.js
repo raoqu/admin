@@ -24,6 +24,8 @@ const Error404 = Loadable({loader: () => import(/*webpackChunkName:'Error404'*/'
 const User = Loadable({loader: () => import(/*webpackChunkName:'User'*/'@/views/user'),loading: Loading});
 const About = Loadable({loader: () => import(/*webpackChunkName:'About'*/'@/views/about'),loading: Loading});
 const Bug = Loadable({loader: () => import(/*webpackChunkName:'Bug'*/'@/views/bug'),loading: Loading});
+const DownloadFile = Loadable({loader: () => import(/*webpackChunkName:'Download'*/'@/views/file/download'),loading: Loading});
+const UploadFile = Loadable({ loader: () => import(/*webpackChunkName:'Upload'*/'@/views/file/upload'),loading: Loading });
 
 export default [
   { path: "/dashboard", component: Dashboard, roles: ["admin","editor","guest"] },
@@ -43,7 +45,9 @@ export default [
   { path: "/nested/menu1/menu1-2/menu1-2-1", component: Menu1_2_1, roles: ["admin","editor"] },
   { path: "/table", component: Table, roles: ["admin","editor"] },
   { path: "/excel/export", component: ExportExcel, roles: ["admin","editor"] },
-  { path: "/excel/upload", component: UploadExcel, roles: ["admin","editor"] },
+  { path: "/excel/upload", component: UploadFile, roles: ["admin"] },
+  { path: "/file/download", component: DownloadFile, roles: ["admin"] },
+  { path: "/file/upload", component: UploadExcel, roles: ["admin","editor"] },
   { path: "/zip", component: Zip, roles: ["admin","editor"] },
   { path: "/clipboard", component: Clipboard, roles: ["admin","editor"] },
   { path: "/user", component: User, roles: ["admin"] },
