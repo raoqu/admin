@@ -4,10 +4,7 @@ import { Upload, Icon, message } from "antd";
 const { Dragger } = Upload;
 
 
-class UploadExcel extends Component {
-  static propTypes = {
-    uploadSuccess: PropTypes.func.isRequired,
-  };
+class UploadFile extends Component {
   state = {
     loading: false,
     excelData: {
@@ -33,12 +30,6 @@ class UploadExcel extends Component {
         } else if (status === 'removed') {
           //...
         }
-      },
-      beforeUpload(file, fileList) {
-        if (!isExcel(file)) {
-          message.error("不支持的文件格式");
-          return false;
-        }
       }
     };
   };
@@ -57,4 +48,4 @@ class UploadExcel extends Component {
   }
 }
 
-export default UploadExcel;
+export default UploadFile;
