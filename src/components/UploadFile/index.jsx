@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { PropTypes } from "prop-types";
 import { Upload, Icon, message } from "antd";
 const { Dragger } = Upload;
 
@@ -13,7 +12,6 @@ class UploadFile extends Component {
     },
   };
   draggerProps = () => {
-    let _this = this;
     return {
       name: "file",
       multiple: true,

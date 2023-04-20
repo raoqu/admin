@@ -27,6 +27,24 @@ const menuList = [
       }
     ]
   },
+  {
+    title: "Excel",
+    path: "/excel",
+    icon: "file-excel",
+    roles:["admin","editor"],
+    children: [
+      {
+        title: "导出Excel",
+        path: "/excel/export",
+        roles:["admin","editor"]
+      },
+      {
+        title: "上传Excel",
+        path: "/excel/upload",
+        roles:["admin","editor"]
+      }
+    ],
+  },
   /*
   {
     title: "引导页",
@@ -148,24 +166,6 @@ const menuList = [
     path: "/table",
     icon: "table",
     roles:["admin","editor"]
-  },
-  {
-    title: "Excel",
-    path: "/excel",
-    icon: "file-excel",
-    roles:["admin","editor"],
-    children: [
-      {
-        title: "导出Excel",
-        path: "/excel/export",
-        roles:["admin","editor"]
-      },
-      {
-        title: "上传Excel",
-        path: "/excel/upload",
-        roles:["admin","editor"]
-      }
-    ],
   },
   {
     title: "Zip",
