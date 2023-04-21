@@ -3,7 +3,7 @@ module.exports = {
   rewrite: [
     {
       from: '/api/(.*)',
-      to: 'http://localhost:8081/api/$1'
+      to: 'http://localhost:8083/api/$1'
     }
   ],
   directory: 'build',
