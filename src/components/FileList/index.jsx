@@ -9,11 +9,17 @@ export class FileList extends Component {
   constructor(props) {
     super(props);
     this.deleteHanler = this.deleteHanler.bind(this);
+    this.downloadHandler = this.downloadHandler.bind(this)
   }
 
   deleteHanler(id, filePath) {
     const { deleteItem } = this.props;
     deleteItem(id, filePath);
+  }
+
+  downloadHandler(id, filePath) {
+    const { downloadItem } = this.props;
+    downloadItem(id, filePath);
   }
 
   render() {
@@ -26,19 +32,9 @@ export class FileList extends Component {
           rowKey={record => record._id}
           pagination={false}
         >
-          <Column title="文件名" dataIndex="fileName" key="fileName" />
-          <Column
-            title="上传者"
-            dataIndex="uploader"
-            key="uploader"
+          <Column title="文件名"  key="fileName"
             render={record => (
-              <span>
-                {record === "admin" ? (
-                  <Tag color="geekblue">admin</Tag>
-                ) : (
-                  record
-                )}
-              </span>
+              <a href={"/api/download?file=" + encodeURIComponent(record["filePath"])} target="_blank">{record["fileName"]}</a>
             )}
           />
           <Column

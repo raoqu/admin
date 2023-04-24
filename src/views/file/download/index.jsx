@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FileList from "@/components/FileList";
-import { getFileList, deleteFile } from "@/api/file";
+import { getFileList, deleteFile, downloadFile } from "@/api/file";
 
 class FileDownload extends Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class FileDownload extends Component {
       data: []
     };
     this.deleteItem = this.deleteItem.bind(this);
+    this.downloadItem = this.downloadItem.bind(this)
   }
 
   componentDidMount() {
@@ -38,10 +39,16 @@ class FileDownload extends Component {
       });
   }
 
+  downloadItem(id, filePath) {
+    console.log('downloadItem')
+    console.log(filePath)
+    downloadFile({ id: id, filePath: filePath})
+  }
+
   render() {
     return (
       <div>
-        <FileList data={this.state.data} deleteItem={this.deleteItem} />
+        <FileList data={this.state.data} deleteItem={this.deleteItem} downloadItem={this.downloadItem}/>
       </div>
     );
   }

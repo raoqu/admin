@@ -3,6 +3,7 @@ import loginAPI from "./login";
 import remoteSearchAPI from "./remoteSearch";
 import excelAPI from "./excel";
 import tableAPI from "./table";
+import fileAPI from "./file"
 import monitor from "./monitor";
 
 // 登录与用户相关
@@ -15,7 +16,6 @@ Mock.mock(/\/user\/edit/, "post", loginAPI.editUser);
 Mock.mock(/\/user\/validatUserID/, "post", loginAPI.ValidatUserID);
 Mock.mock(/\/user\/add/, "post", loginAPI.addUser);
 
-
 // dashboard
 Mock.mock(/\/transaction\/list/, "get", remoteSearchAPI.transactionList);
 
@@ -26,6 +26,9 @@ Mock.mock(/\/excel\/list/, "get", excelAPI.excelList);
 Mock.mock(/\/table\/list/, "post", tableAPI.tableList);
 Mock.mock(/\/table\/delete/, "post", tableAPI.deleteItem);
 Mock.mock(/\/table\/edit/, "post", tableAPI.editItem);
+
+Mock.mock(/\/api\/download/, "post", fileAPI.downloadFile)
+Mock.mock(/\/api\/files/, "post", fileAPI.fileList)
 
 // monitor
 Mock.mock(/\/monitor/, "post", monitor.monitor);

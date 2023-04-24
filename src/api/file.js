@@ -15,9 +15,16 @@ const deleteFile = data => {
     return request.post(`/api/delete`, data);
   };
 
+  const downloadFile = data => {
+    console.log('down')
+    console.log(data)
+    return request.post(`/api/download`, data)
+  }
+
 export {
     uploadFile,
     getFileList,
-    deleteFile
+    deleteFile,
+    downloadFile
   };
   

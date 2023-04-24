@@ -6,6 +6,7 @@
 dist/
 .github/
 .pnp.js
+.DS_Store
 yarn.lock
 
 # testing
