@@ -8,6 +8,7 @@ dist/
 .pnp.js
 .DS_Store
 yarn.lock
+caddy/
 
 # testing
 /coverage

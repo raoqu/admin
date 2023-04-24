@@ -26,6 +26,7 @@ const About = Loadable({loader: () => import(/*webpackChunkName:'About'*/'@/view
 const Bug = Loadable({loader: () => import(/*webpackChunkName:'Bug'*/'@/views/bug'),loading: Loading});
 const DownloadFile = Loadable({loader: () => import(/*webpackChunkName:'Download'*/'@/views/file/download'),loading: Loading});
 const UploadFile = Loadable({ loader: () => import(/*webpackChunkName:'Upload'*/'@/views/file/upload'),loading: Loading });
+const Luqu = Loadable({ loader: () => import(/*webpackChunkName:'Luqu'*/'@/views/file/luqu'),loading: Loading });
 
 export default [
   { path: "/dashboard", component: Dashboard, roles: ["admin","editor","guest"] },
@@ -48,6 +49,7 @@ export default [
   { path: "/excel/upload", component: UploadExcel, roles: ["admin"] },
   { path: "/file/download", component: DownloadFile, roles: ["admin"] },
   { path: "/file/upload", component: UploadFile, roles: ["admin","editor"] },
+  { path: "/file/luqu", component: Luqu, roles: ["admin","editor"] },
   { path: "/zip", component: Zip, roles: ["admin","editor"] },
   { path: "/clipboard", component: Clipboard, roles: ["admin","editor"] },
   { path: "/user", component: User, roles: ["admin"] },

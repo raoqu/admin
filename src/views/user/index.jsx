@@ -5,7 +5,7 @@ import TypingCard from '@/components/TypingCard'
 import EditUserForm from "./forms/edit-user-form"
 import AddUserForm from "./forms/add-user-form"
 const { Column } = Table;
-class User extends Component {
+class Luqu extends Component {
   state = {
     users: [],
     editUserModalVisible: false,
@@ -141,4 +141,4 @@ class User extends Component {
   }
 }
 
-export default User;
+export default Luqu;
